@@ -1,0 +1,619 @@
+// out: ./index.css, compress: true, libs: nib
+.bgcr {
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.ctr {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+div {
+  margin: 0;
+  padding: 0;
+}
+.content {
+  width: 10rem;
+  background-color: #64b263;
+  .img00 {
+    width: 10rem;
+    height: 10rem;
+    .bgcr;
+  }
+  .img01 {
+    background-image: url('../imgs/img_01.jpg');
+  }
+  .img02 {
+    height: 3.03rem;
+    background-image: url('../imgs/img_02.jpg');
+  }
+  .img03 {
+    width: 10rem;
+    .match-end {
+      width: 10rem;
+      margin-top: -.41rem;
+      min-height: 8.16rem;
+      .bgcr;
+      background-image: url('../imgs/img_03.png');
+    }
+    // 赛程详情
+    .match-info {
+      position: relative;
+      width: 10rem;
+      margin-top: -.41rem;
+      z-index: 12;
+      .match-info-t {
+        width: 10rem;
+        height: 5.45rem;
+        .bgcr;
+        background-image: url('../imgs/match_info_t.png');
+        .match-title {
+          padding-top: .6rem;
+          text-align: center;
+          font-size: .4rem;
+          font-weight: 700;
+          color: #df5a2c;
+          line-height: .85rem;
+        }
+        .match-time {
+          text-align: center;
+          line-height: .5rem;
+          color: #363636;
+        }
+        .team {
+          width: 3.12rem;
+          height: 1.3rem;
+          box-shadow: 0px 1px .08rem #888888;
+
+          .team-name {
+            width: 1.81rem;
+            line-height: 1.3rem;
+            color: #fff;
+            font-size: .32rem;
+            text-align: center;
+          }
+          .team-flag {
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 100%;
+            .bgcr;
+          }
+        }
+        .team1 {
+          float: left;
+          margin: .1rem .5rem 0 1.03rem;
+          border-radius: .2rem .65rem .65rem .2rem;
+          background: -webkit-linear-gradient(#e16736, #dd3f22);
+          background: -o-linear-gradient(#e16736, #dd3f22);
+          background: linear-gradient(#e16736, #dd3f22); /* 标准的语法 */
+          .team1-name {
+            float: left;
+          }
+          .team1-flag {
+            float: right;
+          }
+        }
+        .team2 {
+          float: right;
+          margin: .1rem 1.02rem 0 .5rem;
+          border-radius:.65rem  .2rem .2rem .65rem;
+          background: -webkit-linear-gradient(#65b1f7, #1c83e1);
+          background: -o-linear-gradient(#65b1f7, #1c83e1);
+          background: linear-gradient(#65b1f7, #1c83e1); /* 标准的语法 */
+          .team2-name {
+            float: right;
+          }
+          .team2-flag {
+            float: left;
+          }
+        }
+        .team-vote {
+          position: relative;
+          margin-top: 2.1rem;
+          height: .8rem;
+          div{
+            float: left;
+            width: 2.61rem;
+            height: .8rem;
+            line-height: .8rem;
+            color: #a94531;
+            font-size: .32rem;
+            text-align: center;
+            .bgcr;
+          }
+          .team1-vote {
+            margin-left: 1rem;
+            background-image: url('../imgs/vote_bg_grey.png');
+          }
+          .team1-vote-grey {
+            margin-left: 1rem;
+            background-image: url('../imgs/vote_bg_grey.png');
+          }
+          .team0-vote {
+            .ctr;
+            width: 2.05rem;
+            background-image: url('../imgs/vote0_bg_grey.png');
+          }
+          .team0-vote-grey {
+            .ctr;
+            width: 2.05rem;
+            background-image: url('../imgs/vote0_bg_grey.png');
+          }
+          .team2-vote {
+            float: right;
+            margin-right: 1rem;
+            background-image: url('../imgs/vote_bg_grey.png');
+          }
+          .team2-vote-grey {
+            float: right;
+            margin-right: 1rem;
+            background-image: url('../imgs/vote_bg_grey.png');
+          }
+        }
+        .team-count {
+          height: .6rem;
+          div {
+            width: 2.4rem;
+            float: left;
+            text-align: center;
+            color: #363636;
+            font-size: .32rem;
+          }
+          .team1-count {
+            margin-left: 1rem;
+          }
+          .team0-count {
+            .ctr;
+          }
+          .team2-count {
+            float: right;
+            margin-right: 1rem;
+          }
+        }
+      }
+
+
+      .tips-detail {
+        width: 10rem;
+        min-height: 0;
+        max-height: 1.6rem;
+        .bgcr;
+        background-image: url('../imgs/tips_bg.png');
+        background-origin:border-box;
+        margin-top: -1px;
+        .tips {
+          color: #363636;
+          font-size: .29rem;
+          line-height: .4rem;
+          text-align: center;
+          span {
+            color: #ce5b34;
+          }
+        }
+        // 赔率
+        .odds {}
+        // 积分
+        .integr {}
+      }
+
+      .match-info-b {
+        margin-top: -1px;
+        position: relative;
+        width: 10rem;
+        height: 2.21rem;
+        .bgcr;
+        background-image: url('../imgs/match_info_b.png');
+        background-origin:border-box;
+        // 下注弹框
+        .vote-btn-grey{
+          .ctr;
+          top: .15rem;
+          width: 2.8rem;
+          height: .9rem;
+          line-height: .9rem;
+          text-align: center;
+          font-size: .4rem;
+          color: #fff;
+          border-radius: .3rem;
+          background: -webkit-linear-gradient(#848484, #737373);
+          background: -o-linear-gradient(#848484, #737373);
+          background: linear-gradient(#848484, #737373); /* 标准的语法 */
+        }
+        .vote-btn {
+          display: none;
+          .ctr;
+          top: .15rem;
+          width: 2.8rem;
+          height: .9rem;
+          line-height: .9rem;
+          text-align: center;
+          font-size: .4rem;
+          color: #fff;
+          border-radius: .3rem;
+          background: -webkit-linear-gradient(#e16736, #dd3f22);
+          background: -o-linear-gradient(#e16736, #dd3f22);
+          background: linear-gradient(#e16736, #dd3f22); /* 标准的语法 */
+        }
+      }
+    }
+    // 踢球的人
+    .run {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 1.91rem;
+      height: 1.8rem;
+      .bgcr;
+      background-image: url('../imgs/run.png');
+      z-index: 13;
+    }
+    .match-info:nth-child(odd) {
+      .run {}
+    }
+    .match-info:nth-child(even) {
+      .run {
+        left:-.05rem;
+        transform:rotateY(180deg);
+      }
+    }
+  }
+  .img04 {
+    position: relative;
+    background-image: url('../imgs/img_04.jpg');
+    .pkmatch {
+      .ctr;
+      top: 2.4rem;
+      width: 7.3rem;
+      height: 4.2rem;
+      text-align: center;
+      color: #fff;
+      p {
+        .ctr;
+        width: 4.3rem;
+        height: .52rem;
+        line-height: .52rem;
+        border-radius: .25rem;
+        background-color: #887a5b;
+        font-size: .32rem;
+        span {
+          font-size: .4rem;
+        }
+      }
+      .finish {
+        div {
+          width: 1.5rem;
+          height: .6rem;
+          line-height: .6rem;
+          border-radius: .3rem;
+          font-size: .29rem;
+          color: #7d7d7d;
+        }
+        .finish5 {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+        .finish20 {
+          .ctr;
+          bottom: 0;
+        }
+        .finish30 {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+        .finished {
+          color: #f97201;
+        }
+      }
+    }
+  }
+  .img05 {
+    background-image: url('../imgs/img_05.jpg');
+  }
+  .img06 {
+    background-image: url('../imgs/img_06.jpg');
+  }
+  .img07 {
+    height: 2rem;
+    background-image: url('../imgs/img_07.jpg');
+  }
+  // 竞猜记录
+  .record-btn {
+    position: fixed;
+    left: 0;
+    top: 2rem;
+    width: .77rem;
+    height: 2.28rem;
+    .bgcr;
+    background-image: url('../imgs/record_btn.png');
+    z-index: 14;
+  }
+
+  // 弹框
+  .pop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 15;
+    .popbg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+    }
+    // 竞猜记录
+    .recordin {
+      .ctr;
+      top: 2rem;
+      position: fixed;
+      width: 9rem;
+      height: 11rem;
+      border-radius: 0.25rem;
+      background-color: #fff;
+
+      .close {
+        position: absolute;
+        right: -.4rem;
+        top: -.4rem;
+        width: 0.77rem;
+        height: 0.77rem;
+        .bgcr;
+        background-image: url("../imgs/close.png");
+      }
+
+      .recorddel {
+        .ctr;
+        top: 0.5rem;
+        width: 8rem;
+        height: 10rem;
+
+        .headline {
+          text-align: center;
+          font-size: .48rem;
+          color: #8a936e;
+          font-weight: 800;
+          padding-bottom: 0.4rem;
+          border-bottom: 1px solid #cfcfcf;
+        }
+
+        .detail-content {
+          height: 9rem;
+          overflow: scroll;
+        }
+
+        .detail-content::-webkit-scrollbar {
+          display: none;
+        }
+
+
+        .invest-ul {
+          border-bottom: 1px solid #cfcfcf;
+          padding: .15rem 0;
+          p {
+            width: 100%;
+            height: .6rem;
+            line-height: .6rem;
+            font-size: .32rem;
+          }
+          .throw {
+            float: left;
+            color: #8a936e;
+            font-size: .32rem;
+          }
+          .match-name {
+            float: left;
+            font-size: .35rem;
+            color: #8a936e;
+            font-weight: 400;
+          }
+          .match-myBetting {
+            float: left;
+            margin-left: .4rem;
+            font-size: .35rem;
+            color: #8a936e;
+            font-weight: 400;
+          }
+          .match-status {
+            float: right;
+            font-size: .35rem;
+            color: #e76837;
+          }
+        }
+        .null-detail {
+          .ctr;
+          top: 3rem;
+          width: 5.6rem;
+          height: 5.6rem;
+          .bgcr;
+          background-image: url("../imgs/null_detail.png");
+        }
+      }
+    }
+    // 竞猜弹框
+    .votein {
+      .ctr;
+      top: 5rem;
+      width: 9.57rem;
+      height: 4.77rem;
+      .bgcr;
+      background-image: url('../imgs/votein.png');
+      .votein-close {
+        .ctr;
+        top: 4.1rem;
+        width: .6rem;
+        height: .6rem;
+      }
+      .vote-sub {
+        .ctr;
+        top: 2.62rem;
+        width: 2.2rem;
+        height: .72rem;
+      }
+      .vote-count {
+        .ctr;
+        top: 1.65rem;
+        width: 4.53rem;
+        height: .42rem;
+        line-height: .42rem;
+        color: #a94531;
+        border: none;
+        padding: .15rem .2rem;
+        background-color: transparent;
+      }
+      input::-webkit-input-placeholder {
+        color: #8d8d8d;
+      }
+      input:-moz-placeholder {
+        color: #8d8d8d;
+      }
+      input::-moz-placeholder {
+        color: #8d8d8d;
+      }
+      input:-ms-input-placeholder {
+        color: #8d8d8d;
+      }
+    }
+  }
+
+    // 弹框
+    .pop2 {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 16;
+      .popbg2 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+      }
+      // 普通提示弹框
+      .tipin {
+        .ctr;
+        top: 5rem;
+        .bgcr;
+        width: 9.37rem;
+        height: 4.05rem;
+        color: #cf623a;
+        font-size: .4rem;
+        background-image: url('../imgs/tipin.png');
+        p {
+          .ctr;
+          top: 33%;
+          text-align: center;
+        }
+      }
+    }
+}
+
+// 弹幕
+.barrage-end {
+  .ctr;
+  top: 2.1rem;
+  left: 47.05%;
+  position: relative;
+  width: 6.98rem;
+  height: 4.4rem;
+  line-height: 4.4rem;
+  overflow:hidden;
+  font-size: .45rem;
+  color: #cf623a;
+  text-align: center;
+  display: none;
+}
+.barrage-box {
+  .ctr;
+  top: 2.1rem;
+  left: 47.05%;
+  position: relative;
+  width: 6.98rem;
+  height: 4.4rem;
+  overflow:hidden;
+  .barrage-area{
+      font-size:0.28rem;
+      line-height:1rem;
+      position: relative;
+      width: 7rem;
+      height: 3.52rem;
+      background-color:transparent;
+      list-style: none;
+  }
+
+  .barrage-item{
+      position:absolute;
+      left:100%;
+      line-height:.53rem;
+      font-size:.29rem;
+      padding:0px .3rem;
+      border-radius:.4rem;
+      color: #fff;
+      background-color:#faae37;
+      white-space: nowrap;
+  }
+
+  .barrage-item[data-rank = "0"]{
+      top:11%;
+  }
+  .barrage-item[data-rank = "1"]{
+      top:33%;
+  }
+  .barrage-item[data-rank = "2"]{
+      top:57%;
+  }
+  .barrage-item[data-rank = "3"]{
+      top:80%;
+  }
+  .control{
+      .value {
+        width: 5.1rem;
+        height: .5rem;
+        margin-left: .2rem;
+        padding: .1rem 0 .1rem .3rem;
+        line-height:.5rem;
+        font-size: .32rem;
+        background-color:#f1f1f1;
+        border-radius: .15rem;
+        border: none;
+        color: #666;
+        box-shadow: 0 1px #a59a8d;
+        input::-webkit-input-placeholder {
+          color: #999;
+        }
+        input:-moz-placeholder {
+          color: #999;
+        }
+        input::-moz-placeholder {
+          color: #999;
+        }
+        input:-ms-input-placeholder {
+          color: #999;
+        }
+      }
+      .value:focus {
+        outline:none;
+      }
+      #insert {
+        width: 1.11rem;
+        height: .57rem;
+        line-height: .57rem;
+        font-size: .27rem;
+        border-radius: .1rem;
+        margin: .06rem .2rem 0 0;
+        color: #fff;
+        text-align: center;
+        background-color: #f97b00;
+        float: right;
+      }
+  }
+}

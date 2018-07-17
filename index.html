@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,viewport-fit=cover" />
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta content="telephone=no,email=no" name="format-detection">
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="https://image.ppmiao.com/Public/js/jquery.min.js"></script>
+  <script src="https://image.ppmiao.com/Public/js/flexible.js"></script>
+  <script src="https://image.ppmiao.com/Public/js/flexible_css.js"></script>
+  <script type="text/javascript" src="https://image.ppmiao.com/Public/js/util.js"></script>
+  <script src="https://image.ppmiao.com/Public/js/template-web.js"></script>
+  <title>球迷狂欢季</title>
+</head>
+
+<body>
+  <div class="content">
+    <div class="img00 img01"></div>
+    <div class="img00 img02"></div>
+    <div class="img03">
+      <!-- 活动结束 -->
+      <!-- <div class="match-end"></div> -->
+      <!-- 赛程详情 -->
+
+    </div>
+    <div class="img00 img04">
+      <div class="pkmatch">
+        <p>我的竞猜正确场数：<span class="finished-count">0</span></p>
+        <div class="finish">
+          <div class="finish5">未达成</div>
+          <div class="finish20">未达成</div>
+          <div class="finish30">未达成</div>
+        </div>
+      </div>
+    </div>
+    <div class="img00 img05">
+      <div class="barrage-box">
+        <ul class="barrage-area"></ul>
+        <div class="control">
+          <input class="value" type="text" id="value" maxlength="15" placeholder="写下你的意见参与讨论吧~ 0/15" />
+          <div id="insert">发送</div>
+        </div>
+      </div>
+      <div class="barrage-end">活动已结束</div>
+    </div>
+    <div class="img00 img06"></div>
+    <div class="img00 img07"></div>
+    <!-- 竞猜记录 -->
+    <div class="record-btn"></div>
+    <div class="pop">
+      <div class="popbg"></div>
+      <!-- 竞猜记录 -->
+      <div class="popin recordin">
+        <div class="close"></div>
+        <div class="recorddel">
+          <p class="headline">竞猜记录</p>
+          <div class="detail-content"></div>
+        </div>
+      </div>
+      <!-- 下注弹框 -->
+      <div class="popin votein">
+        <input class="vote-count" type="tel" maxlength="8" placeholder="积分必须为100的倍数">
+        <div class="vote-sub"></div>
+        <div class="votein-close"></div>
+      </div>
+    </div>
+    <div class="pop2">
+      <div class="popbg2"></div>
+      <!-- 普通提示弹框 -->
+      <div class="popin2 tipin">
+        <p></p>
+      </div>
+    </div>
+  </div>
+  <!-- 有竞猜记录 -->
+  <script id="allDetail" type="text/html">
+   {{each result value index}}
+   <div class="invest-ul">
+     <p>
+       <span class="throw">{{value["addTime"]}} 投入{{value["amount"]}}积分</span>
+       <span class="match-status">
+         {{if value["status"]==-1}}
+         待开奖
+         {{else}}
+           {{if value["status"]==0}}
+             中奖 + {{value["prize"]}}
+           {{else}}
+           未中奖
+           {{/if}}
+         {{/if}}
+       </span>
+     </p>
+     <p>
+       <span class="match-name">{{value["team1"]}}VS{{value["team2"]}}</span>
+       <span class="match-myBetting">竞猜内容:
+        {{if value["myBetting"]==0}}
+          平局
+        {{else}}
+          {{if value["myBetting"]==1}}
+            {{value["team1"]}}胜
+          {{else}}
+            {{value["team2"]}}胜
+          {{/if}}
+        {{/if}}
+       </span>
+     </p>
+   </div>
+   {{/each}}
+ </script>
+ <!-- 没有竞猜记录 -->
+ <script id="nullDetail" type="text/html">
+   <div class="null-detail"></div>
+ </script>
+ <!-- 竞猜赔率和预计奖励 -->
+ <script id="tipsDetail" type="text/html">
+   <div class="tips odds">
+     <p>若竞猜成功，赔率为<span class="odds-count">{{result.rate.toFixed(2)}}</span></p>
+     <p style="font-size: .27rem;color: #8d8d8d;">*赔率实时变动</p>
+   </div>
+   <div class="tips integr">
+     <p>若竞猜成功您预计可获得<span class="integr-count">{{result.myPrize.toFixed(0)}}</span>积分！</p>
+   </div>
+ </script>
+ <!-- 第二日赛程 -->
+ <script id="matchInfo" type="text/html">
+   {{each result value index}}
+   <div class="match-info">
+     <div class="match-info-t">
+       <p class="match-title">— {{value["matchName"]}} —</p>
+       <p class="match-time">{{value["startTime"]}}</p>
+       <div class="team team1">
+         <div class="team-name team1-name">{{value["team1Name"]}}</div>
+         <div class="team-flag team1-flag" style="background-image: url(./imgs/icon_{{value['team1Id']}}.png)"></div>
+       </div>
+       <div class="team team2">
+       <div class="team-flag team2-flag" style="background-image: url(./imgs/icon_{{value['team2Id']}}.png)"></div>
+         <div class="team-name team2-name">{{value["team2Name"]}}</div>
+       </div>
+       <div class="team-vote">
+         {{if value["myBetting"]==-1}}
+           <div class="team1-vote" data-scheduleId="{{value['id']}}">{{value["team1Name"]}}胜</div>
+           {{if value["matchType"]==0}}
+           <div class="team0-vote" data-scheduleId="{{value['id']}}">平局</div>
+           {{/if}}
+           <div class="team2-vote" data-scheduleId="{{value['id']}}">{{value["team2Name"]}}胜</div>
+         {{else}}
+          {{if value["myBetting"]==1}}
+            <div class="team1-vote" data-scheduleId="{{value['id']}}" style="background-image: url('./imgs/vote_bg.png');color:#fff;">{{value["team1Name"]}}胜</div>
+          {{else}}
+            <div class="team1-vote-grey">{{value["team1Name"]}}胜</div>
+          {{/if}}
+          {{if value["matchType"]==0}}
+            {{if value["myBetting"]==0}}
+              <div class="team0-vote" data-scheduleId="{{value['id']}}" style="background-image: url('./imgs/vote0_bg.png');color:#fff;">平局</div>
+            {{else}}
+              <div class="team0-vote-grey">平局</div>
+            {{/if}}
+          {{/if}}
+          {{if value["myBetting"]==2}}
+          <div class="team2-vote" data-scheduleId="{{value['id']}}" style="background-image: url('./imgs/vote_bg.png');color:#fff;">{{value["team2Name"]}}胜</div>
+          {{else}}
+          <div class="team2-vote-grey">{{value["team2Name"]}}胜</div>
+          {{/if}}
+         {{/if}}
+
+       </div>
+       <div class="team-count">
+         <div class="team1-count">{{value["team1Member"]}}人支持</div>
+         {{if value["matchType"]==0}}
+         <div class="team0-count">{{value["neutralMember"]}}人支持</div>
+         {{/if}}
+         <div class="team2-count">{{value["team2Member"]}}人支持</div>
+       </div>
+     </div>
+     <div class="tips-detail"></div>
+     <div class="match-info-b">
+       <!-- 下注弹框 -->
+       {{if value["myBetting"]==-1}}
+         <div class="vote-btn-grey">下注</div>
+         <div class="vote-btn" onclick="voteBtnFn({{value['id']}},{{value['myBetting']}})">
+            {{if value["myBetting"]==-1}}
+            下注
+            {{else}}
+            加注
+            {{/if}}
+          </div>
+       {{else}}
+       <div class="vote-btn" style="display:block" onclick="voteBtnFn({{value['id']}},{{value['myBetting']}})">
+         {{if value["myBetting"]==-1}}
+         下注
+         {{else}}
+         加注
+         {{/if}}
+       </div>
+       {{/if}}
+     </div>
+     <div class="run"></div>
+   </div>
+   {{/each}}
+ </script>
+  <script src="./js/barrage.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
