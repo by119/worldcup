@@ -1,4 +1,4 @@
-var host = 'https://sailsact.ppmiao.com';   //-----------
+var host = 'http://118.178.229.154:2019';   //-----------
 var token = GetQueryString("data");
 
 var $voteCount = $('.vote-count'),
